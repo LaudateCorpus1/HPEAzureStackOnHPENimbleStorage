@@ -15,7 +15,7 @@
 #################################################################
 
 # Variable Block
-$NWTuri=            'https://github.com/chris-lionetti/HPENimbleStorageAzureStack/raw/master/Setup-NimbleNWT-x64.6.0.1.3252.exe'
+$NWTuri=            'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/Setup-NimbleNWT-x64.6.0.1.3252.exe'
 $NimblePSTKuri=     'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/HPENimblePowerShellToolkit.300.zip'   
 $WindowsPowerShellModulePath="C:\Windows\System32\WindowsPowerShell\v1.0\Modules"
 # $NimbleArrayIP=     "10.1.240.20"
