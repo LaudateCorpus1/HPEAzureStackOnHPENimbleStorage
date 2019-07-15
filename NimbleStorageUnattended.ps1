@@ -25,7 +25,7 @@ $AZNSoutfile =      "C:\NimbleStorage\Logs\NimbleInstall.log"
 $RunOnce=           "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
 $ScriptLocation=    'C:\NimbleStorage\NimbleStorageUnattended.ps1'
 $RunOnceValue=      'C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe -executionPolicy Unrestricted -File ' + $ScriptLocation
-$UpdatedPSTKcmd=    'https://raw.githubusercontent.com/chris-lionetti/HPENimbleStorageAzureStack/master/AzureStack.ps1'
+$UpdatedPSTKcmd=    'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/AzureStack.ps1'
 $UpdatedPSTK=       'https://raw.githubusercontent.com/chris-lionetti/HPENimbleStorageAzureStack/master/NimPSSDK.psm1'
 
 $NimbleUser = (Get-ItemProperty -Path HKLM:\Software\AzureStackNimbleStorage).NimbleUserName
