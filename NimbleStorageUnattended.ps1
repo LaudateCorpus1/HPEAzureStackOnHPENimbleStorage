@@ -10,7 +10,7 @@
 # directoy at C:\NimbleStorage\Logs and will also post to the   #
 # Windows Event Logs.                                           #
 #                                                               #
-# Published https://raw.githubusercontent.com/chris-lionetti/HPENimbleStorageAzureStack/master/NimbleStorageUnattended.ps1
+# Published https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/NimbleStorageUnattended.ps1
 # Written by Chris Lionetti                                     #
 #################################################################
 
@@ -26,7 +26,7 @@ $RunOnce=           "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce"
 $ScriptLocation=    'C:\NimbleStorage\NimbleStorageUnattended.ps1'
 $RunOnceValue=      'C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe -executionPolicy Unrestricted -File ' + $ScriptLocation
 $UpdatedPSTKcmd=    'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/AzureStack.ps1'
-$UpdatedPSTK=       'https://raw.githubusercontent.com/chris-lionetti/HPENimbleStorageAzureStack/master/NimPSSDK.psm1'
+$UpdatedPSTK=       'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/NimPSSDK.psm1'
 
 $NimbleUser = (Get-ItemProperty -Path HKLM:\Software\AzureStackNimbleStorage).NimbleUserName
 $NimblePassword=(Get-ItemProperty -Path HKLM:\Software\AzureStackNimbleStorage).NimblePassword
