@@ -32,7 +32,7 @@ if (-not ([System.Management.Automation.PSTypeName]'ServerCertificateValidationC
 Add-Type $certCallback
 }
 [ServerCertificateValidationCallback]::Ignore()
-$uri="https://raw.githubusercontent.com/chris-lionetti/HPENimbleStorageAzureStack/master/NimbleStorageUnattended.ps1"
+$uri="https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/NimbleStorageUnattended.ps1"
 $Code=(Invoke-WebRequest -Uri $uri -Method Get).content
 out-file -FilePath "C:\NimbleStorage\NimbleStorageUnAttended.ps1" -inputobject $Code -ErrorAction SilentlyContinue -force
 
