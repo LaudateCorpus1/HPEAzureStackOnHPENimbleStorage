@@ -1,6 +1,6 @@
 $NimbleUserName = "admin"
 $NimblePassword = "admin"
-$NimbleArrayIP = "10.1.240.20"
+$NimbleArrayIP = "192.168.1.60"
 # Do not need to modify anything below this line.
 # This single file should NOT be posted to YOUR public Github site as it contains the username and password of the Nimble array
 # that you intend to use.
