@@ -10,12 +10,14 @@
 # directoy at C:\NimbleStorage\Logs and will also post to the   #
 # Windows Event Logs.                                           #
 #                                                               #
+#   Version 1.0 - Initial build.
+#   Version 2.0 - includes NimbleWindowsToolkit 7.0.2           #
 # Published https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/NimbleStorageUnattended.ps1
 # Written by Chris Lionetti                                     #
 #################################################################
 
 # Variable Block
-$NWTuri=            'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/Setup-NimbleNWT-x64.6.0.1.3252.exe'
+$NWTuri=            'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/Setup-NimbleNWT-x64.7.0.2.56.exe'
 $NimblePSTKuri=     'https://github.com/HewlettPackard/HPEAzureStackOnHPENimbleStorage/raw/master/HPENimblePowerShellToolkit.300.zip'   
 $WindowsPowerShellModulePath="C:\Windows\System32\WindowsPowerShell\v1.0\Modules"
 # $NimbleArrayIP=     "10.1.240.20"
@@ -289,10 +291,10 @@ function Setup-AZNSNimbleWindowsToolkit
             if ( Get-NWTConfiguration | where{$_.GroupMgmtIPList -ne ""} )
                 {   Post-AZNSEvent "The Nimble Windows Toolkit has already been configured" "info"
                 } else 
-                {   # $MyNimUsername=(Get-ItemProperty -Path HKCU:\Software\NimbleStorage\Credentials\DefaultCred).UserName
-                    # Post-AZNSEvent $MyNimUsername+" is the Useranme" "Info"
-                    # $MyNimPassword=(Get-ItemProperty -Path HKCU:\Software\NimbleStorage\Credentials\DefaultCred).Password
-                    # Post-AZNSEvent $MyNimPassword+" is the Password" "Info"
+                {   $MyNimUsername=(Get-ItemProperty -Path HKCU:\Software\NimbleStorage\Credentials\DefaultCred).UserName
+                    Post-AZNSEvent $MyNimUsername+" is the Useranme" "Info"
+                    $MyNimPassword=(Get-ItemProperty -Path HKCU:\Software\NimbleStorage\Credentials\DefaultCred).Password
+                    # Post-AZNSEvent $MyNimPassword+" is the Password" "Info"           ### This is commented out since I dont want the password sent into a log file.
 
                     $NimblePasswordObect = ConvertTo-SecureString $NimblePassword -AsPlainText -force
                     $NimbleCredObject = new-object -typename System.Management.Automation.PSCredential -argumentlist $NimbleUser, $NimblePasswordObect
